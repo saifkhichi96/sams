@@ -16,7 +16,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-      <com.cygnus.view.UserSummaryView
+      <co.aspirasoft.sams.view.UserSummaryView
           android:id="@+id/userSummaryView"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"/>
