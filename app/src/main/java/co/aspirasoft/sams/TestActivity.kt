@@ -1,7 +1,6 @@
 package co.aspirasoft.sams
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -13,6 +12,7 @@ import co.aspirasoft.sams.core.DashboardChildActivity
 import co.aspirasoft.sams.dao.TestsDao
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.*
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.sams.view.TestScoreView
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
@@ -121,7 +121,7 @@ class TestActivity : DashboardChildActivity() {
     }
 
     override fun updateUI(currentUser: User) {
-        UsersDao.getStudentsInClass(schoolId, subject.classId, OnSuccessListener { it ->
+        UsersDao.getStudentsInClass(schoolId, subject.classId, OnSuccessListener {
             onStudentsReceived(it)
         })
     }
@@ -139,14 +139,14 @@ class TestActivity : DashboardChildActivity() {
             supportActionBar?.title = test.name
             typeSpinner.visibility = View.GONE
             subtypeSpinner.visibility = View.GONE
-        } else showError("Total marks are required!")
+        } else showError(getString(R.string.error_required_total_marks))
     }
 
     fun onSaveButtonClicked(v: View) {
         if (checkInputGradesValid()) {
             MaterialAlertDialogBuilder(this)
-                    .setTitle("Save Grades")
-                    .setMessage("Please make sure that all marks are correct. Do you wish to save?")
+                    .setTitle(getString(R.string.label_save))
+                    .setMessage(getString(R.string.confirm_save_grades))
                     .setPositiveButton(android.R.string.yes) { _, _ ->
                         saveTest()
                     }
@@ -154,7 +154,7 @@ class TestActivity : DashboardChildActivity() {
                         dialog.cancel()
                     }
                     .show()
-        } else showError("Obtained marks cannot be higher than total marks!")
+        } else showError(getString(R.string.error_invalid_marks))
     }
 
     private fun checkInputGradesValid(): Boolean {
@@ -196,10 +196,10 @@ class TestActivity : DashboardChildActivity() {
     }
 
     private fun saveTest() {
-        val status = Snackbar.make(contentList, "Saving grades...", Snackbar.LENGTH_INDEFINITE)
+        val status = Snackbar.make(contentList, getString(R.string.status_saving), Snackbar.LENGTH_INDEFINITE)
         status.show()
         TestsDao.add(schoolId, test, OnCompleteListener {
-            status.setText("Saving grades... Done!")
+            status.setText(getString(R.string.status_saved))
             Handler().postDelayed({
                 status.dismiss()
                 finish()
@@ -220,10 +220,7 @@ class TestActivity : DashboardChildActivity() {
     }
 
     private fun showError(error: String) {
-        Snackbar.make(contentList, error, Snackbar.LENGTH_LONG)
-                .setBackgroundTint(getColor(R.color.colorWarning))
-                .setTextColor(Color.WHITE)
-                .show()
+        Utils.showError(contentList, error)
     }
 
     private fun updateTestWith(saved: Test) {

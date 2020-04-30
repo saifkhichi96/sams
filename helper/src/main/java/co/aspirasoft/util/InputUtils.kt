@@ -1,6 +1,6 @@
 package co.aspirasoft.util
 
-import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.util.regex.Matcher
@@ -30,7 +30,7 @@ object InputUtils {
             wrapper.isErrorEnabled = error != null
             wrapper.error = error
         } catch (ignored: Exception) {
-            error?.let { Toast.makeText(this.context, it, Toast.LENGTH_SHORT).show() }
+            error?.let { Snackbar.make(this, it, Snackbar.LENGTH_LONG).show() }
         }
     }
 

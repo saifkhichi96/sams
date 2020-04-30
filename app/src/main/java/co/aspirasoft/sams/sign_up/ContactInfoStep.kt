@@ -52,7 +52,7 @@ class ContactInfoStep : WizardViewStep("Create Profile") {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 emailField.showError(null)
                 if (!s.toString().trim().isEmail()) {
-                    emailField.showError(getString(R.string.error_email_invalid))
+                    emailField.showError(getString(R.string.error_invalid_email))
                 }
             }
         })
@@ -76,7 +76,7 @@ class ContactInfoStep : WizardViewStep("Create Profile") {
             val phone = phoneField.text.toString().trim()
 
             if (!email.isEmail()) {
-                emailField.showError(getString(R.string.error_email_invalid))
+                emailField.showError(getString(R.string.error_invalid_email))
                 false
             } else {
                 data.put(R.id.emailField, email)

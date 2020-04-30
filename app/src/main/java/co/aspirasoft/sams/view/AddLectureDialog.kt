@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.model.Subject
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.showError
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
@@ -38,7 +38,7 @@ class AddLectureDialog : BottomSheetDialogFragment() {
             schoolId = args.getString(ARG_SCHOOL_ID)!!
             subject = args.getSerializable(ARG_SUBJECT) as Subject
         } catch (ex: Exception) {
-            Toast.makeText(v.context, ex.message, Toast.LENGTH_LONG).show()
+            ex.message?.let { Utils.showError(v, it) }
             dismiss()
             return null
         }
@@ -54,10 +54,10 @@ class AddLectureDialog : BottomSheetDialogFragment() {
 
         // Init views
         lectureDayField.selectTab(lectureDayField.getTabAt(0))
-        lectureTimeField.text = String.format("%02d:%02d", 0, 0)
+        lectureTimeField.text = String.format(getString(R.string.format_date), 0, 0)
         lectureTimeField.setOnClickListener {
             TimePickerDialog(context, TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
-                lectureTimeField.text = String.format("%02d:%02d", hourOfDay, minute)
+                lectureTimeField.text = String.format(getString(R.string.format_date), hourOfDay, minute)
             }, 0, 0, true).show()
         }
 
@@ -71,9 +71,9 @@ class AddLectureDialog : BottomSheetDialogFragment() {
 
     private fun onOk() {
         val duration = lectureDurationField.text.toString().toIntOrNull()
-        if (duration == null) lectureDurationField.showError("required")
+        if (duration == null) lectureDurationField.showError(getString(R.string.error_required))
         else {
-            val startTime = SimpleDateFormat("hh:mm", Locale.getDefault()).parse(lectureTimeField.text.toString())
+            val startTime = SimpleDateFormat(getString(R.string.format_date_24), Locale.getDefault()).parse(lectureTimeField.text.toString())
             val endTime = Date(startTime!!.time + (duration * 60000))
             val dayOfWeek = lectureDayField.selectedTabPosition + 1
 

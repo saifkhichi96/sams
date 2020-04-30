@@ -4,13 +4,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import co.aspirasoft.sams.sign_up.SignUpActivity
 import co.aspirasoft.sams.utils.DynamicLinksUtils
+import co.aspirasoft.sams.utils.Utils
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_splash.*
 
 /**
  * SplashActivity is first called when the app starts.
@@ -62,7 +63,7 @@ class SplashActivity : AppCompatActivity() {
                         try {
                             parseDeepLink(it.result?.link!!)
                         } catch (ex: Exception) {
-                            Toast.makeText(this, ex.message ?: "Malformed link", Toast.LENGTH_SHORT).show()
+                            Utils.showError(splashScreen, ex.message ?: getString(R.string.error_invalid_link))
                         }
                     } else startAppDelayed()
                 }

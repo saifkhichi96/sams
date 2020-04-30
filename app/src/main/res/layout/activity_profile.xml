@@ -2,8 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
 
   <com.google.android.material.appbar.AppBarLayout
       android:layout_width="match_parent"
@@ -96,7 +98,7 @@
               android:layout_marginTop="16dp"
               android:layout_marginStart="24dp"
               android:layout_marginLeft="24dp"
-              android:text="@string/about_head"
+              android:text="@string/section_about"
               app:textAllCaps="true"/>
 
           <!-- Birthday -->
@@ -126,7 +128,7 @@
               android:layout_margin="0dp"
               android:clickable="false"
               android:padding="0dp"
-              android:text="@string/label_male"
+              android:text="@string/label_gender_male"
               android:textAllCaps="false"
               android:textColor="?android:attr/textColorPrimary"
               app:icon="@drawable/ic_gender"
@@ -150,7 +152,7 @@
               android:layout_marginTop="16dp"
               android:layout_marginStart="24dp"
               android:layout_marginLeft="24dp"
-              android:text="@string/academic_head"
+              android:text="@string/section_info_academic"
               app:textAllCaps="true"/>
 
           <!-- Blood Type -->
@@ -162,7 +164,7 @@
               android:layout_margin="0dp"
               android:clickable="false"
               android:padding="0dp"
-              android:text="@string/ph_assigned_class"
+              android:text="@string/ph_class"
               android:textAllCaps="false"
               android:textColor="?android:attr/textColorPrimary"
               app:icon="@drawable/ic_classroom"
@@ -203,7 +205,7 @@
               android:layout_marginTop="16dp"
               android:layout_marginStart="24dp"
               android:layout_marginLeft="24dp"
-              android:text="@string/contact_head"
+              android:text="@string/section_contact"
               app:textAllCaps="true"/>
 
           <!-- Address -->
@@ -273,7 +275,7 @@
               android:layout_marginTop="16dp"
               android:layout_marginStart="24dp"
               android:layout_marginLeft="24dp"
-              android:text="@string/emergency_head"
+              android:text="@string/section_info_emergency"
               app:textAllCaps="true"/>
 
           <!-- Blood Type -->

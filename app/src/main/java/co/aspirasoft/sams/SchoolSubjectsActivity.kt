@@ -6,13 +6,13 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import co.aspirasoft.adapter.ModelViewAdapter
 import co.aspirasoft.sams.core.DashboardChildActivity
 import co.aspirasoft.sams.dao.ClassesDao
 import co.aspirasoft.sams.dao.Invite
 import co.aspirasoft.sams.model.Subject
 import co.aspirasoft.sams.model.User
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.sams.view.AddSubjectDialog
 import co.aspirasoft.sams.view.SubjectView
 import com.google.android.gms.tasks.OnSuccessListener
@@ -68,7 +68,7 @@ class SchoolSubjectsActivity : DashboardChildActivity() {
             }
             dialog.show(supportFragmentManager, dialog.toString())
         } else {
-            Toast.makeText(this, "You must add your school classes first.", Toast.LENGTH_LONG).show()
+            Utils.showError(contentList, getString(R.string.error_missing_classes))
         }
     }
 

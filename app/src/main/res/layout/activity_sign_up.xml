@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:custom="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/gradient_primary">
+              android:background="@drawable/gradient_primary"
+              tools:context=".sign_up.SignUpActivity">
 
   <co.aspirasoft.view.WizardView
       android:id="@+id/wizardView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       custom:icon="@drawable/logo"
-      custom:submitLabel="Sign Up"
+      custom:submitLabel="@string/label_sign_up"
       custom:showDivider="false"
       custom:showIndicator="true"
       custom:showTitle="true"/>

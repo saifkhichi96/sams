@@ -60,9 +60,9 @@ class CreateAccountStep : WizardViewStep("Welcome to Cygnus") {
             it as SignUpActivity
             signUpWelcomeMessage.text = String.format(
                     it.getString(R.string.sign_up_welcome_msg),
-                    if (it.accountType == Teacher::class) "Respected" else "Dear", // Greeting
+                    if (it.accountType == Teacher::class) getString(R.string.respected) else getString(R.string.dear), // Greeting
                     it.accountType.simpleName, // Account Type
-                    if (it.accountType == Teacher::class) "school" else "class teacher" // Greeting
+                    if (it.accountType == Teacher::class) getString(R.string.school) else getString(R.string.class_teacher) // Greeting
             )
         }
     }

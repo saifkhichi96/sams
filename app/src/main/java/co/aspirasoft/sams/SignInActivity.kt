@@ -3,7 +3,6 @@ package co.aspirasoft.sams
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import co.aspirasoft.sams.dao.SchoolDao
 import co.aspirasoft.sams.dao.UsersDao
@@ -11,6 +10,7 @@ import co.aspirasoft.sams.model.Credentials
 import co.aspirasoft.sams.model.School
 import co.aspirasoft.sams.model.Teacher
 import co.aspirasoft.sams.model.User
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isNotBlank
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.snackbar.Snackbar
@@ -40,7 +40,7 @@ class SignInActivity : AppCompatActivity() {
             auth.signOut()
             Snackbar.make(
                     signInButton,
-                    "Congratulations! Use your email/password to sign into your new account now.",
+                    getString(R.string.status_signed_up),
                     Snackbar.LENGTH_LONG
             ).show()
         }
@@ -71,8 +71,8 @@ class SignInActivity : AppCompatActivity() {
 
             val progressDialog = ProgressDialog.show(
                     this,
-                    "Please Wait",
-                    "Signing you in...",
+                    getString(R.string.wait),
+                    getString(R.string.status_signing_in),
                     true
             )
             auth.signInWithEmailAndPassword(email, password)
@@ -159,7 +159,7 @@ class SignInActivity : AppCompatActivity() {
      * could not be fetched from the database.
      */
     private fun onFailure(ex: Exception?) {
-        Toast.makeText(this, ex?.message ?: "Sign in failed", Toast.LENGTH_LONG).show()
+        Utils.showError(signInButton, ex?.message ?: getString(R.string.status_sign_in_failed))
         auth.signOut()
     }
 

@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/splashScreen"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="?attr/colorPrimaryDark"
               android:gravity="center"
               android:orientation="vertical"
               android:theme="@style/AppTheme.Dark"
-              tools:context="co.aspirasoft.sams.SplashActivity">
+              tools:context=".SplashActivity">
 
   <androidx.appcompat.widget.AppCompatImageView
       android:id="@+id/logo"

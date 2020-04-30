@@ -34,7 +34,7 @@ class LectureView : BaseView<Lecture> {
     override fun updateView(model: Lecture) {
         lectureDay.selectTab(lectureDay.getTabAt(model.dayOfWeek - 1))
 
-        val formatter = SimpleDateFormat("hh:mma", Locale.getDefault())
+        val formatter = SimpleDateFormat(context.getString(R.string.format_date_12), Locale.getDefault())
         lectureDetails.text = String.format(
                 Locale.getDefault(),
                 "%s - %s",

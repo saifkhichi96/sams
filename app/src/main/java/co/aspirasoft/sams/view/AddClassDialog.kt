@@ -7,18 +7,19 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
-import android.widget.Toast
 import co.aspirasoft.sams.MyApplication
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.dao.ClassesDao
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.SchoolClass
 import co.aspirasoft.sams.model.Teacher
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isNotBlank
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.checkbox.MaterialCheckBox
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DataSnapshot
@@ -52,7 +53,7 @@ class AddClassDialog : BottomSheetDialogFragment() {
             schoolId = args.getString(ARG_SCHOOL_ID)!!
             model = args.getSerializable(ARG_SAVED_CLASS) as SchoolClass?
         } catch (ex: Exception) {
-            Toast.makeText(v.context, ex.message, Toast.LENGTH_LONG).show()
+            ex.message?.let { Utils.showError(v, it) }
             dismiss()
         }
 

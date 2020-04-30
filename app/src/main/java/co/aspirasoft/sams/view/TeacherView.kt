@@ -58,7 +58,7 @@ class TeacherView : BaseView<Teacher> {
 
             teacherName.text = model.name
             teacherEmail.text = when (model.classId.isNullOrBlank()) {
-                true -> "No Class Assigned"
+                true -> context.getString(R.string.ph_class)
                 else -> model.classId
             }
         }

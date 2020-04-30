@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.Student
 import co.aspirasoft.sams.tasks.InvitationTask
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isEmail
 import co.aspirasoft.util.InputUtils.isNotBlank
 import co.aspirasoft.util.InputUtils.showError
@@ -44,7 +44,7 @@ class AddStudentDialog : BottomSheetDialogFragment() {
             teacherId = args.getString(ARG_TEACHER_ID)!!
             model = args.getSerializable(ARG_SAVED_INSTANCE) as Student?
         } catch (ex: Exception) {
-            Toast.makeText(v.context, ex.message, Toast.LENGTH_LONG).show()
+            ex.message?.let { Utils.showError(v, it) }
             dismiss()
             return null
         }
@@ -85,15 +85,11 @@ class AddStudentDialog : BottomSheetDialogFragment() {
                 okButton.isEnabled = true
 
                 if (task.isSuccessful) {
-                    Toast.makeText(
-                            studentEmailField.context,
-                            getString(R.string.status_invitation_sent),
-                            Toast.LENGTH_LONG
-                    ).show()
+                    Utils.showError(studentEmailField, getString(R.string.status_invitation_sent))
                     dismiss()
                 } else {
                     studentEmailField.showError(task.exception?.message
-                            ?: getString(R.string.error_invitation_not_sent))
+                            ?: getString(R.string.status_invitation_failed))
                 }
             }
         }
@@ -110,19 +106,19 @@ class AddStudentDialog : BottomSheetDialogFragment() {
                 // Ensure roll number and email are unique
                 UsersDao.getStudentByRollNumber(schoolId, rollNo, OnSuccessListener { existingStudent ->
                     if (existingStudent != null) {
-                        rollNumberField.showError(getString(R.string.error_roll_no_exists))
+                        rollNumberField.showError(getString(R.string.error_conflicting_student))
                         isCancelable = true
                         okButton.isEnabled = true
                     } else UsersDao.getUserByEmail(schoolId, email, OnSuccessListener { existingUser ->
                         if (existingUser != null) {
-                            studentEmailField.showError(getString(R.string.error_email_exists))
+                            studentEmailField.showError(getString(R.string.error_conflicting_email))
                             isCancelable = true
                             okButton.isEnabled = true
                         } else inviteStudent(rollNo, email)
                     })
                 })
             } else {
-                studentEmailField.showError(getString(R.string.error_email_invalid))
+                studentEmailField.showError(getString(R.string.error_invalid_email))
             }
         }
     }

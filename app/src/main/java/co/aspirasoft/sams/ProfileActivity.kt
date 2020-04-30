@@ -44,7 +44,7 @@ class ProfileActivity : DashboardChildActivity() {
             if (PermissionUtils.requestPermissionIfNeeded(
                             this,
                             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            getString(R.string.permission_storage),
+                            getString(R.string.explanation_storage_permission),
                             RC_WRITE_PERMISSION
                     )) {
                 pickImage()
@@ -95,15 +95,15 @@ class ProfileActivity : DashboardChildActivity() {
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
                         val bytes = outputStream.toByteArray()
 
-                        val status = Snackbar.make(userImage, "Uploading...", Snackbar.LENGTH_INDEFINITE)
+                        val status = Snackbar.make(userImage, getString(R.string.status_uploading), Snackbar.LENGTH_INDEFINITE)
                         status.show()
                         mFileManager.upload("photo.png", bytes)
                                 .addOnFailureListener {
-                                    status.setText(it.message ?: "Failed to upload photo.")
+                                    status.setText(it.message ?: getString(R.string.status_upload_failed))
                                     Handler().postDelayed({ status.dismiss() }, 1500L)
                                 }
                                 .addOnSuccessListener {
-                                    status.setText("Photo uploaded.")
+                                    status.setText(getString(R.string.status_uploaded))
                                     Handler().postDelayed({ status.dismiss() }, 1500L)
                                     showUserImage(true)
                                 }
@@ -156,7 +156,7 @@ class ProfileActivity : DashboardChildActivity() {
             }
             is Teacher -> {
                 className.text = when (currentUser.classId.isNullOrBlank()) {
-                    true -> "No Class Assigned"
+                    true -> getString(R.string.ph_class)
                     else -> currentUser.classId
                 }
                 rollNo.visibility = View.GONE
@@ -171,7 +171,7 @@ class ProfileActivity : DashboardChildActivity() {
                 bloodType.text = "${currentUser.bloodType}"
                 emergencyContactName.text = currentUser.emergencyContact
                 emergencyContactEmail.text = when {
-                    currentUser.emergencyEmail.isNullOrBlank() -> "Not Set"
+                    currentUser.emergencyEmail.isNullOrBlank() -> getString(R.string.ph_unset)
                     else -> currentUser.emergencyEmail
                 }
                 emergencyContactPhone.text = currentUser.emergencyPhone

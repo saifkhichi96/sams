@@ -65,9 +65,9 @@ class IntroductionStep : WizardViewStep("Say Hi") {
             val name = nameField.text.toString().trim()
             val birthday = dateOfBirthField.text.toString().trim()
             val gender = when (genderField.checkedRadioButtonId) {
-                R.id.genderMale -> getString(R.string.label_male)
-                R.id.genderFemale -> getString(R.string.label_female)
-                else -> getString(R.string.label_non_binary)
+                R.id.genderMale -> getString(R.string.label_gender_male)
+                R.id.genderFemale -> getString(R.string.label_gender_female)
+                else -> getString(R.string.label_gender_other)
             }
 
             data.apply {

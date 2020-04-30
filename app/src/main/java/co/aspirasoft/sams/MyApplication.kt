@@ -17,8 +17,8 @@ class MyApplication : Application() {
         // Enabling persistence speeds up app by caching data locally
         // db.setPersistenceEnabled(true)
 
-        STATUS_INVITE_PENDING = getString(R.string.status_invite_pending)
-        STATUS_INVITE_ACCEPTED = getString(R.string.status_invite_accepted)
+        STATUS_INVITE_PENDING = getString(R.string.pending)
+        STATUS_INVITE_ACCEPTED = getString(R.string.accepted)
     }
 
     companion object {

@@ -45,14 +45,14 @@
         android:id="@+id/theoryMarks"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:hint="Theory"
+        android:hint="@string/hint_theory"
         android:inputType="number"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/practicalMarks"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:hint="Practical"
+        android:hint="@string/hint_practical"
         android:inputType="number"/>
 
   </LinearLayout>

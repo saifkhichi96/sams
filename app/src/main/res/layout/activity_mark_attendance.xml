@@ -40,7 +40,7 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:text="&lt;"
+            android:text="@string/previous"
             android:visibility="gone"/>
 
         <com.google.android.material.textview.MaterialTextView
@@ -55,7 +55,7 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="48dp"
             android:layout_height="wrap_content"
-            android:text="&gt;"
+            android:text="@string/next"
             android:visibility="gone"/>
 
       </LinearLayout>

@@ -2,8 +2,10 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SubjectActivity">
 
   <com.google.android.material.appbar.AppBarLayout
       android:layout_width="match_parent"
@@ -38,7 +40,7 @@
           android:id="@+id/className"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@string/ph_assigned_class"/>
+          android:text="@string/ph_class"/>
 
       <com.google.android.material.textview.MaterialTextView
           style="@style/TextAppearance.MaterialComponents.Body2"
@@ -59,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="@string/lecture_times_head"/>
+            android:text="@string/section_appointments"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addAppointmentButton"
@@ -93,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="@string/course_material_head"/>
+            android:text="@string/section_material"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addMaterialButton"
@@ -126,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="@string/homework_sheets_head"/>
+            android:text="@string/section_homework"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addHomeworkButton"

@@ -58,10 +58,10 @@ class SchoolTeachersActivity : DashboardChildActivity() {
         }
         this.invites = invites
 
-        supportActionBar?.title = if (status == getString(R.string.status_invite_accepted)) {
-            "Current Staff"
+        supportActionBar?.title = if (status == getString(R.string.accepted)) {
+            getString(R.string.title_staff_joined)
         } else {
-            "Invited Staff"
+            getString(R.string.title_staff_invited)
         }
 
         addButton.visibility = View.GONE
@@ -71,7 +71,7 @@ class SchoolTeachersActivity : DashboardChildActivity() {
         teachers.clear()
         for (invite in invites) {
             val teacher = Teacher("", "", Credentials(invite.invitee, ""))
-            if (status == getString(R.string.status_invite_accepted)) {
+            if (status == getString(R.string.accepted)) {
                 UsersDao.getUserByEmail(currentUser.id, invite.invitee, OnSuccessListener {
                     if (it != null && it is Teacher) {
                         teacher.updateWith(it)
@@ -97,15 +97,17 @@ class SchoolTeachersActivity : DashboardChildActivity() {
             v.findViewById<View>(R.id.revokeInviteButton).setOnClickListener {
                 for (invite in invites) {
                     if (invite.invitee == email) {
-                        Snackbar.make(contentList, "Revoke invite to $email?", Snackbar.LENGTH_INDEFINITE)
-                                .setAction(getString(R.string.label_revoke)) {
-                                    InvitesDao.remove(currentUser.id, invite, OnSuccessListener {
-                                        invites.remove(invite)
-                                        this@SchoolTeachersActivity.teachers.remove(teacher)
-                                        this@SchoolTeachersActivity.adapter?.notifyDataSetChanged()
-                                    })
-                                }
-                                .show()
+                        Snackbar.make(
+                                contentList,
+                                String.format(getString(R.string.confirm_revoke_invite), email),
+                                Snackbar.LENGTH_INDEFINITE
+                        ).setAction(getString(R.string.label_revoke)) {
+                            InvitesDao.remove(currentUser.id, invite, OnSuccessListener {
+                                invites.remove(invite)
+                                this@SchoolTeachersActivity.teachers.remove(teacher)
+                                this@SchoolTeachersActivity.adapter?.notifyDataSetChanged()
+                            })
+                        }.show()
                         break
                     }
                 }

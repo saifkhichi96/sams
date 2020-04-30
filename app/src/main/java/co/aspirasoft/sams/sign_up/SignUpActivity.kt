@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.SparseArray
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import co.aspirasoft.sams.MyApplication
 import co.aspirasoft.sams.R
@@ -13,6 +12,7 @@ import co.aspirasoft.sams.dao.Invite
 import co.aspirasoft.sams.dao.InvitesDao
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.*
+import co.aspirasoft.sams.utils.Utils
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -114,7 +114,7 @@ class SignUpActivity : AppCompatActivity() {
             )
         })
         wizardView.setOnSubmitListener {
-            findViewById<Button>(R.id.nextButton).text = "Signing up..."
+            findViewById<Button>(R.id.nextButton).text = getString(R.string.status_signing_up)
             findViewById<Button>(R.id.nextButton).isEnabled = false
             onSubmit(it)
         }
@@ -190,8 +190,8 @@ class SignUpActivity : AppCompatActivity() {
                     OnSuccessListener {
                         invite = it
                         when (invite?.status) {
-                            getString(R.string.status_invite_pending) -> onVerificationSuccess(user, password)
-                            getString(R.string.status_invite_accepted) -> onFailure(getString(R.string.error_invitation_accepted))
+                            getString(R.string.pending) -> onVerificationSuccess(user, password)
+                            getString(R.string.accepted) -> onFailure(getString(R.string.error_invalid_invitation))
                             else -> onFailure()
                         }
                     }
@@ -223,7 +223,7 @@ class SignUpActivity : AppCompatActivity() {
                                         finish()
                                     }
                                 } else {
-                                    onFailure(it.exception?.message ?: getString(R.string.error_sign_up_failed))
+                                    onFailure(it.exception?.message ?: getString(R.string.status_sign_up_failed))
                                     result.credential?.let { credential ->
                                         firebaseUser.reauthenticate(credential)
                                                 .addOnCompleteListener {
@@ -235,7 +235,7 @@ class SignUpActivity : AppCompatActivity() {
                         }
                     }
                     .addOnFailureListener { ex ->
-                        onFailure(ex.message ?: getString(R.string.error_sign_up_failed))
+                        onFailure(ex.message ?: getString(R.string.status_sign_up_failed))
                     }
         } else onFailure()
     }
@@ -248,8 +248,8 @@ class SignUpActivity : AppCompatActivity() {
      * @param error An (optional) description of cause of failure.
      */
     private fun onFailure(error: String? = null) {
-        Toast.makeText(this, error ?: getString(R.string.error_invitation_not_found), Toast.LENGTH_LONG).show()
-        findViewById<Button>(R.id.nextButton).text = "Sign Up"
+        Utils.showError(wizardView, error ?: getString(R.string.error_missing_invitation))
+        findViewById<Button>(R.id.nextButton).text = getString(R.string.label_sign_up)
         findViewById<Button>(R.id.nextButton).isEnabled = true
     }
 
@@ -261,7 +261,7 @@ class SignUpActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if (!wizardView.onBackPressed()) {
             MaterialAlertDialogBuilder(this)
-                    .setMessage(getString(R.string.prompt_cancel_signup))
+                    .setMessage(getString(R.string.confirm_cancel_sign_up))
                     .setPositiveButton(android.R.string.yes) { dialog, _ ->
                         super.onBackPressed()
                         dialog.dismiss()

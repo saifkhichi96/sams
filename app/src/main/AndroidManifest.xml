@@ -41,12 +41,12 @@
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".AttendanceActivity"
-              android:label="Attendance"
+              android:label="@string/title_attendance"
               android:parentActivityName=".StudentDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".ReportCardActivity"
-              android:label="Report Card"
+              android:label="@string/title_report_card"
               android:parentActivityName=".StudentDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
@@ -54,35 +54,35 @@
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".ProfileActivity"
-              android:label="Profile"
+              android:label="@string/title_profile"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".StudentsActivity"
-              android:label="Manage Students"
+              android:label="@string/title_students"
               android:parentActivityName=".TeacherDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".NoticeActivity"
-              android:label="Announcements"
+              android:label="@string/title_announcements"
               android:parentActivityName=".TeacherDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".MarkAttendanceActivity"
-              android:label="Mark Attendance"
+              android:label="@string/title_mark_attendance"
               android:parentActivityName=".TeacherDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".SubjectActivity"
-              android:label="Subjects"
+              android:label="@string/title_subjects"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".TestsActivity"
-              android:label="Grades"
+              android:label="@string/title_tests"
               android:parentActivityName=".SubjectActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".TestActivity"
-              android:label="Add Grades"
+              android:label="@string/title_test"
               android:parentActivityName=".SubjectActivity"
               android:configChanges="orientation|screenSize"/>
 
@@ -90,17 +90,16 @@
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".SchoolTeachersActivity"
-              android:label="Staff"
               android:parentActivityName=".SchoolDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".SchoolClassesActivity"
-              android:label="Manage Classes"
+              android:label="@string/title_school_classes"
               android:parentActivityName=".SchoolDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 
     <activity android:name=".SchoolSubjectsActivity"
-              android:label="Manage Classes"
+              android:label="@string/title_school_subjects"
               android:parentActivityName=".SchoolDashboardActivity"
               android:configChanges="orientation|screenSize"/>
 

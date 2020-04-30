@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
-import android.widget.Toast
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.dao.SubjectsDao
 import co.aspirasoft.sams.model.Subject
+import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isNotBlank
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -48,12 +48,12 @@ class AddSubjectDialog : BottomSheetDialogFragment() {
             schoolId = args.getString(ARG_SCHOOL_ID)!!
             model = args.getSerializable(ARG_SAVED_INSTANCE) as Subject?
         } catch (ex: Exception) {
-            Toast.makeText(v.context, ex.message, Toast.LENGTH_LONG).show()
+            ex.message?.let { Utils.showError(v, it)  }
             dismiss()
             return null
         } finally {
             if (classes.isEmpty()) {
-                Toast.makeText(v.context, "You must add your school classes first.", Toast.LENGTH_LONG).show()
+                Utils.showError(v, getString(R.string.error_missing_classes))
                 dismiss()
                 return null
             }
@@ -140,7 +140,7 @@ class AddSubjectDialog : BottomSheetDialogFragment() {
 
     private fun onError(error: String? = null) {
         subjectTeacherWrapper.isErrorEnabled = true
-        subjectTeacherWrapper.error = error ?: "Select a valid teacher from the list."
+        subjectTeacherWrapper.error = error ?: getString(R.string.error_invalid_teacher)
         isCancelable = true
         okButton.isEnabled = true
     }

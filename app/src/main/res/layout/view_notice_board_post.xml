@@ -17,7 +17,7 @@
         style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="at "
+        android:text="@string/at"
         android:textSize="12sp"/>
 
     <com.google.android.material.textview.MaterialTextView
@@ -53,7 +53,7 @@
         style="@style/TextAppearance.MaterialComponents.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" wrote:"
+        android:text="@string/wrote"
         android:textSize="13sp"/>
 
   </LinearLayout>
@@ -64,6 +64,6 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_margin="8dp"
-      android:text="@string/academics_desc"/>
+      android:text="@string/academics_body"/>
 
 </LinearLayout>

@@ -65,17 +65,17 @@ class NoticeActivity : DashboardChildActivity() {
         MessageInputDialog(this)
                 .setOnMessageReceivedListener { message ->
                     try {
-                        val status = Snackbar.make(contentList, "Sending...", Snackbar.LENGTH_INDEFINITE)
+                        val status = Snackbar.make(contentList, getString(R.string.status_posting), Snackbar.LENGTH_INDEFINITE)
                         status.show()
 
                         val post = NoticeBoardPost(postContent = message, postAuthor = currentUser.name)
                         val onCompleteListener = OnCompleteListener<Void?> {
                             if (it.isSuccessful) {
-                                status.setText("Message sent!")
+                                status.setText(getString(R.string.status_posted))
                                 posts.add(post)
                                 adapter.notifyDataSetChanged()
                             } else {
-                                status.setText(it.exception?.message ?: "Could not send the message at this time.")
+                                status.setText(it.exception?.message ?: getString(R.string.status_post_failed))
                             }
 
                             Handler().postDelayed({

@@ -1,18 +1,45 @@
 <resources>
   <string name="app_name">SAMS</string>
   <string name="required_asterisk"><![CDATA[<font color=\'#cc0029\'>*</font>]]></string>
+  <string name="accepted" translatable="false">Accepted</string>
+  <string name="pending" translatable="false">Pending</string>
+  <string name="format_date" translatable="false">%02d:%02d</string>
+  <string name="format_date_12" translatable="false">hh:mma</string>
+  <string name="format_date_24" translatable="false">hh:mm</string>
+
+
+  <!-- Activity titles -->
+  <string name="title_announcements">Announcements</string>
+  <string name="title_attendance">Attendance</string>
+  <string name="title_attendance_percentage">%.1f%% Attendance</string>
+  <string name="title_mark_attendance">Mark Attendance</string>
+  <string name="title_profile">Profile</string>
+  <string name="title_report_card">Report Card</string>
+  <string name="title_school_classes">Manage Classes</string>
+  <string name="title_school_subjects">Manage Subjects</string>
   <string name="title_sign_in">Sign In</string>
+  <string name="title_staff_invited">Invited Staff</string>
+  <string name="title_staff_joined">Current Staff</string>
+  <string name="title_students">Manage Students</string>
+  <string name="title_subjects">Subjects</string>
+  <string name="title_test">Add Grades</string>
+  <string name="title_tests">Grades</string>
+
 
   <!-- Placeholders -->
-  <string name="ph_address">74 Bangur Avenue, Kolkata, West Bengal</string>
-  <string name="ph_date">2 January, 1961</string>
-  <string name="ph_assigned_class">Assigned Class</string>
-  <string name="ph_email">bdeshmukh91@gmail.com</string>
-  <string name="ph_name">Brahman Deshmukh</string>
-  <string name="ph_phone">+9125742299</string>
-  <string name="ph_school">The Exemplary School</string>
+  <string name="ph_address">Main Street 123, Anytown, USA</string>
+  <string name="ph_class">No Class Assigned</string>
+  <string name="ph_date">1 January, 1970</string>
+  <string name="ph_duration">Duration</string>
+  <string name="ph_email">john_doe@example.com</string>
+  <string name="ph_name">John Doe</string>
+  <string name="ph_phone">+1 (098) 7654321</string>
+  <string name="ph_school">The ABC School</string>
   <string name="ph_student_count">%d Student(s)</string>
+  <string name="ph_time">00:00</string>
   <string name="ph_type">Student</string>
+  <string name="ph_unset">Not Set</string>
+
 
   <!-- Input Hints -->
   <string name="hint_blood_group">Blood Group</string>
@@ -21,6 +48,7 @@
   <string name="hint_class_teacher">Class Teacher Email</string>
   <string name="hint_country">Country</string>
   <string name="hint_dob">Date of Birth</string>
+  <string name="hint_duration">Duration (min)</string>
   <string name="hint_email">Email</string>
   <string name="hint_emails">Emails</string>
   <string name="hint_emergency_contact">Emergency Contact</string>
@@ -30,6 +58,7 @@
   <string name="hint_password_confirm">Confirm Password</string>
   <string name="hint_phone">Phone</string>
   <string name="hint_postal_code">Postal Code</string>
+  <string name="hint_practical">Practical</string>
   <string name="hint_state">State</string>
   <string name="hint_street">Street</string>
   <string name="hint_student_email">Student Email</string>
@@ -37,125 +66,197 @@
   <string name="hint_subject_class">Class/Section</string>
   <string name="hint_subject_name">Course Name</string>
   <string name="hint_subject_teacher">Teacher\'s Email</string>
+  <string name="hint_theory">Theory</string>
+  <string name="hint_time">Time</string>
+
 
   <!-- Button Labels -->
   <string name="label_add">Add</string>
   <string name="label_announcements">Announcements</string>
   <string name="label_class_teacher">Class Teacher</string>
+  <string name="label_change_password">Change Password</string>
+  <string name="label_change_photo">Change Photo</string>
+  <string name="label_create">Create</string>
+  <string name="label_delete">Delete</string>
+  <string name="label_delete_account">Delete Account</string>
   <string name="label_edit">Edit</string>
+  <string name="label_gender_female">Female</string>
+  <string name="label_gender_male">Male</string>
+  <string name="label_gender_other">Other</string>
   <string name="label_grades">Grades</string>
   <string name="label_invite">Invite</string>
   <string name="label_invite_multiple">Send Multiple Invites</string>
   <string name="label_manage_classes">Class\nManagement</string>
   <string name="label_manage_courses">Course\nManagement</string>
+  <string name="label_manage_students">Manage Your Students</string>
+  <string name="label_mark_attendance">Mark Attendance</string>
   <string name="label_news">News</string>
+  <string name="label_privacy">Privacy Policy</string>
   <string name="label_profile">Manage your Cygnus Profile</string>
   <string name="label_revoke">Revoke</string>
   <string name="label_save">Save</string>
-  <string name="label_skip_teacher_assignment">Assign a teacher later.</string>
-  <string name="label_staff_invited">%d Pending</string>
-  <string name="label_staff_joined">%d Joined</string>
-  <string name="label_female">Female</string>
-  <string name="label_male">Male</string>
-  <string name="label_manage_students">Manage Your Students</string>
-  <string name="label_mark_attendance">Mark Attendance</string>
-  <string name="label_non_binary">Other</string>
-  <string name="label_privacy">Privacy Policy</string>
   <string name="label_see_attendance">See Attendance</string>
   <string name="label_see_grades">See Grades</string>
   <string name="label_send">Send</string>
+  <string name="label_sign_up">Sign Up</string>
+  <string name="label_skip_teacher_assignment">Assign a teacher later</string>
+  <string name="label_staff_invited">%d Pending</string>
+  <string name="label_staff_joined">%d Joined</string>
   <string name="label_tos">Terms of Service</string>
-  <string name="label_change_photo">Change Photo</string>
-  <string name="label_change_password">Change Password</string>
-  <string name="label_delete_account">Delete Account</string>
+  <string name="label_total_marks">Total Marks</string>
+
 
   <!-- Section Headings -->
-  <string name="about_head">About</string>
-  <string name="academic_head">Academic Info</string>
-  <string name="academics_head">Academics</string>
-  <string name="academics_desc">Add/Edit the classes and courses taught at your school. You can also
+  <string name="section_about">About</string>
+  <string name="section_appointments">Lecture Times</string>
+  <string name="section_contact">Contact</string>
+  <string name="section_courses">Your Courses</string>
+  <string name="section_homework">Homework Sheets</string>
+  <string name="section_info_academic">Academic Info</string>
+  <string name="section_info_emergency">Emergency Info</string>
+  <string name="section_material">Course Material</string>
+  <string name="section_timetable">Timetable</string>
+  <string name="section_total">Total</string>
+
+
+  <!-- Card/Dialog Titles -->
+  <string name="academics">Academics</string>
+  <string name="add_class">Add Class</string>
+  <string name="add_lecture">Add Lecture</string>
+  <string name="add_student">Add Student</string>
+  <string name="add_subject">Add Subject</string>
+  <string name="close_attendance">Close Attendance</string>
+  <string name="file_upload">Add to %s (%s)</string>
+  <string name="staff">Staff</string>
+
+
+  <!-- Card/Dialog Descriptions -->
+  <string name="academics_body">Add/Edit the classes and courses taught at your school. You can also
     assign class teachers, and select instructors for each subject.
   </string>
-  <string name="add_class_head">Add Class</string>
-  <string name="add_class_desc">Enter details of the new class to add it to your school. Please note that each
+  <string name="add_class_body">Enter details of the new class to add it to your school. Please note that each
     school class must have a unique name.
   </string>
-  <string name="add_student_head">Add Student</string>
-  <string name="add_student_desc">Enter details of the new student to add it to your class. Please note that each
+  <string name="add_lecture_body">Select a day and time to create a new lecture appointment.</string>
+  <string name="add_student_body">Enter details of the new student to add it to your class. Please note that each
     student must have a unique roll number and email address.
   </string>
-  <string name="add_subject_head">Add Subject</string>
-  <string name="add_subject_desc">Enter details of the new subject to add it to your school. Please note that each
+  <string name="add_subject_body">Enter details of the new subject to add it to your school. Please note that each
     subject taught to a class must have a unique name.
   </string>
-  <string name="contact_head">Contact</string>
-  <string name="course_material_head">Course Material</string>
-  <string name="courses_head">Your Courses</string>
-  <string name="emergency_head">Emergency Info</string>
-  <string name="homework_sheets_head">Homework Sheets</string>
-  <string name="lecture_times_head">Lecture Times</string>
-  <string name="staff_head">Staff</string>
-  <string name="staff_desc">Invite your team members to join Cygnus. A magic link will be emailed which
+  <string name="staff_body">Invite your team members to join Cygnus. A magic link will be emailed which
     can be used to sign up.
   </string>
   <string name="student_class_head">You are enrolled in</string>
   <string name="teacher_class_head">You are assigned to</string>
-  <string name="timetable_head">Timetable</string>
 
-  <!-- Prompts and Explanations -->
-  <string name="use_invited_email">Please use the same email address on which you received the sign up invitation.
+
+  <!-- Input Explanations -->
+  <string name="helper_sign_up_email">To verify your identity, you must use the same email address to sign up on
+    which you received the sign up invitation.
   </string>
-  <string name="emails_input_explanation">Please write one email address on each line.</string>
+  <string name="helper_multiple_emails">Please write one email address on each line.</string>
+
+
+  <!-- Messages -->
   <string name="sign_up_welcome_msg">%s %s,\n\nYou have been invited by your %s to join the Cygnus App.
     \n\nPlease complete the registration process by creating a password for your new account.
   </string>
-  <string name="prompt_cancel_signup">Your account has not been created yet. Do you want to exit sign up?</string>
-  <string name="permission_storage">We need permission to access your file storage in order to download
+
+
+  <!-- Permission Explanations -->
+  <string name="explanation_storage_permission">We need permission to access your file storage in order to download
     images, course contents, and other application files. The files you access frequently are cached on
     your device in order to provide you a smoother experience.
   </string>
 
+
+  <!-- Confirmation Messages -->
+  <string name="confirm_cancel_sign_up">Your account has not been created yet. Do you want to exit sign up?</string>
+  <string name="confirm_close_editor">Make sure that you have saved any changes you made on this page before going
+    back. Are you sure?
+  </string>
+  <string name="confirm_delete_appointment">Remove lecture time?</string>
+  <string name="confirm_revoke_invite">Revoke invite to %s?</string>
+  <string name="confirm_save_grades">Please make sure that all marks are correct. Do you wish to save?</string>
+  <string name="confirm_upload">Uploaded files cannot be edited or removed. Do you want to add \'%s\'?</string>
+
   <!-- Status Messages -->
+  <string name="status_signing_up">Signing up…</string>
+  <string name="status_signed_up">Congratulations! Use your email/password to sign into your new account now.</string>
+  <string name="status_sign_up_failed">Sign up failed.</string>
+
+  <string name="status_signing_in">Signing you in…</string>
+  <string name="status_sign_in_failed">Sign in failed</string>
+
   <string name="status_invitation_sending">Sending Invitation</string>
   <string name="status_invitation_progress">A magic link is being emailed to %s…</string>
   <string name="status_invitation_sent">Invitation emailed</string>
+  <string name="status_invitation_failed">Failed to invite</string>
 
   <string name="status_invitations_sending">Sending %d/%d Invitation…</string>
   <string name="status_invitations_progress">Emailed %d/%d magic links…</string>
   <string name="status_invitations_sent">Invitations Sent</string>
 
-  <string name="status_invite_pending">Pending</string>
-  <string name="status_invite_accepted">Accepted</string>
+  <string name="status_posting">Sending…</string>
+  <string name="status_posted">Message sent!</string>
+  <string name="status_post_failed">Could not send the message at this time.</string>
+
+  <string name="status_saving">Saving…</string>
+  <string name="status_saved">All updates saved!</string>
+
+  <string name="status_uploading">Uploading…</string>
+  <string name="status_uploaded">Uploaded successful.</string>
+  <string name="status_upload_failed">Failed to upload.</string>
+
 
   <!-- Error Messages -->
-  <string name="error_invitation_failure">Failed to invite</string>
-  <string name="sign_up_email_explanation">To verify your identity, you must use the same email address to sign up on
-    which you received this invitation.
-  </string>
-  <string name="error_password_mismatch">Passwords do not match.</string>
-  <string name="error_email_invalid">Invalid email address.</string>
-  <string name="error_blood_type_invalid">Invalid blood type.</string>
-  <string name="error_invitation_accepted">This user is already registered. Please make sure you are using the email on
+  <string name="error_conflicting_email">Email already exists.</string>
+  <string name="error_conflicting_student">Roll number already exists.</string>
+  <string name="error_download">Could not download file.</string>
+  <string name="error_invalid_blood_type">Invalid blood type.</string>
+  <string name="error_invalid_email">Invalid email address.</string>
+  <string name="error_invalid_invitation">This user is already registered. Please make sure you are using the email on
     which you received the invitation.
   </string>
-  <string name="error_invitation_not_found">Link verification failed. Please ask your admin to issue a new invitation.
-  </string>
-  <string name="error_sign_up_failed">Sign up failed.</string>
-  <string name="error_email_exists">Email already exists.</string>
-  <string name="error_roll_no_exists">Roll number already exists.</string>
-  <string name="error_invitation_not_sent">Invitation could not be sent</string>
+  <string name="error_invalid_link">Malformed link.</string>
   <string name="error_invalid_teacher">Select a valid teacher from the list.</string>
+  <string name="error_invalid_marks">Obtained marks cannot be higher than total marks!</string>
+  <string name="error_missing_classes">You must add your school classes first.</string>
+  <string name="error_missing_invitation">Link is expired. Please ask your school to issue a new invitation.</string>
+  <string name="error_no_staff_invited">No staff members invited yet.</string>
+  <string name="error_no_staff_joined">No staff members have joined yet.</string>
+  <string name="error_open">Could not open file.</string>
+  <string name="error_password_mismatch">Passwords do not match.</string>
+  <string name="error_required">required</string>
+  <string name="error_required_total_marks">Total marks are required!</string>
   <string name="error_unknown">Unknown error.</string>
+
 
   <!-- Menu Actions -->
   <string name="menu_account">Account</string>
 
-  <string name="upload_title">Add to %s (%s)</string>
-  <string name="upload_confirm">Uploaded files cannot be edited or removed. Do you want to add \'%s\'?</string>
-  <string name="upload_started">Uploading…</string>
-  <string name="upload_success">File uploaded.</string>
-  <string name="upload_failure">Failed to upload file.</string>
 
+  <!-- Days of Week -->
+  <string name="monday">M</string>
+  <string name="tuesday">T</string>
+  <string name="wednesday">W</string>
+  <string name="thursday">T</string>
+  <string name="friday">F</string>
+  <string name="saturday">S</string>
+  <string name="sunday">S</string>
+
+
+  <!-- Misc -->
+  <string name="class_teacher">class teacher</string>
+  <string name="dear">Dear</string>
+  <string name="respected">Respected</string>
+  <string name="school">school</string>
+  <string name="wait">Please Wait</string>
+  <string name="previous"><![CDATA[<]]></string>
+  <string name="next"><![CDATA[>]]></string>
+  <string name="wrote">" wrote:"</string>
+  <string name="at">"at "</string>
   <string-array name="blood_types">
     <item>O+</item>
     <item>O-</item>

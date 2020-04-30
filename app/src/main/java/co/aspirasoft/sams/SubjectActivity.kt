@@ -127,7 +127,7 @@ class SubjectActivity : DashboardChildActivity() {
         if (PermissionUtils.requestPermissionIfNeeded(
                         this,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        getString(R.string.permission_storage),
+                        getString(R.string.explanation_storage_permission),
                         RC_WRITE_PERMISSION
                 )) {
             pickFile(RESULT_ACTION_PICK_MATERIAL)
@@ -138,7 +138,7 @@ class SubjectActivity : DashboardChildActivity() {
         if (PermissionUtils.requestPermissionIfNeeded(
                         this,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        getString(R.string.permission_storage),
+                        getString(R.string.explanation_storage_permission),
                         RC_WRITE_PERMISSION
                 )) {
             pickFile(RESULT_ACTION_PICK_HOMEWORK)
@@ -207,11 +207,11 @@ class SubjectActivity : DashboardChildActivity() {
 
     private fun uploadFile(fm: FileManager, filename: String, data: Uri, adapter: MaterialAdapter?) {
         MaterialAlertDialogBuilder(this)
-                .setTitle(String.format(getString(R.string.upload_title), subject.name, subject.classId))
-                .setMessage(String.format(getString(R.string.upload_confirm), filename))
+                .setTitle(String.format(getString(R.string.file_upload), subject.name, subject.classId))
+                .setMessage(String.format(getString(R.string.confirm_upload), filename))
                 .setPositiveButton(android.R.string.yes) { dialog, _ ->
                     dialog.dismiss()
-                    val status = Snackbar.make(contentList, getString(R.string.upload_started), Snackbar.LENGTH_INDEFINITE)
+                    val status = Snackbar.make(contentList, getString(R.string.status_uploading), Snackbar.LENGTH_INDEFINITE)
                     status.show()
                     fm.upload(filename, data)
                             .addOnSuccessListener {
@@ -220,11 +220,11 @@ class SubjectActivity : DashboardChildActivity() {
                                     adapter?.notifyDataSetChanged()
                                 }
 
-                                status.setText(getString(R.string.upload_success))
+                                status.setText(getString(R.string.status_uploaded))
                                 Handler().postDelayed({ status.dismiss() }, 2500L)
                             }
                             .addOnFailureListener {
-                                status.setText(it.message ?: getString(R.string.upload_failure))
+                                status.setText(it.message ?: getString(R.string.status_upload_failed))
                                 Handler().postDelayed({ status.dismiss() }, 2500L)
                             }
                 }
@@ -244,8 +244,8 @@ class SubjectActivity : DashboardChildActivity() {
                     this.visibility = View.VISIBLE
                     this.setOnClickListener {
                         MaterialAlertDialogBuilder(context)
-                                .setTitle("Remove lecture time?")
-                                .setPositiveButton("Delete") { dialog, _ ->
+                                .setTitle(context.getString(R.string.confirm_delete_appointment))
+                                .setPositiveButton(context.getString(R.string.label_delete)) { dialog, _ ->
                                     subject.appointments.remove(lectures[position])
                                     notifyDataSetChanged()
                                     SubjectsDao.add(schoolId, subject, OnCompleteListener { })

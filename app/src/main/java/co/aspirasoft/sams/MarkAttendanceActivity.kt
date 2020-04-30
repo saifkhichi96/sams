@@ -54,10 +54,10 @@ class MarkAttendanceActivity : DashboardChildActivity() {
         contentList.adapter = adapter
 
         saveButton.setOnClickListener {
-            val status = Snackbar.make(contentList, "Saving attendance...", Snackbar.LENGTH_INDEFINITE)
+            val status = Snackbar.make(contentList, getString(R.string.status_saving), Snackbar.LENGTH_INDEFINITE)
             status.show()
             AttendanceDao.add(schoolId, attendance, OnCompleteListener {
-                status.setText("Saving attendance... Done!")
+                status.setText(getString(R.string.status_saved))
                 Handler().postDelayed({ status.dismiss() }, 2500L)
             })
         }
@@ -91,8 +91,8 @@ class MarkAttendanceActivity : DashboardChildActivity() {
 
     override fun onBackPressed() {
         MaterialAlertDialogBuilder(this)
-                .setTitle("Close Attendance")
-                .setMessage("Make sure that you have saved any changes you made on this page before going back. Are you sure?")
+                .setTitle(getString(R.string.close_attendance))
+                .setMessage(getString(R.string.confirm_close_editor))
                 .setPositiveButton(android.R.string.yes) { _, _ ->
                     super.onBackPressed()
                 }

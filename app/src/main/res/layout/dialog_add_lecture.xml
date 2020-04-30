@@ -11,13 +11,13 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textStyle="bold"
-      android:text="Add Lecture"/>
+      android:text="@string/add_lecture"/>
 
   <com.google.android.material.textview.MaterialTextView
       style="@style/TextAppearance.MaterialComponents.Body2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Select a day and time to create a new lecture appointment."/>
+      android:text="@string/add_lecture_body"/>
 
   <com.google.android.material.tabs.TabLayout
       android:id="@+id/lectureDayField"
@@ -31,37 +31,37 @@
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="M"/>
+        android:text="@string/monday"/>
 
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="T"/>
+        android:text="@string/tuesday"/>
 
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="W"/>
+        android:text="@string/wednesday"/>
 
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="T"/>
+        android:text="@string/thursday"/>
 
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="F"/>
+        android:text="@string/friday"/>
 
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="S"/>
+        android:text="@string/saturday"/>
 
     <com.google.android.material.tabs.TabItem
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="S"/>
+        android:text="@string/sunday"/>
 
   </com.google.android.material.tabs.TabLayout>
 
@@ -82,7 +82,7 @@
           style="@style/TextAppearance.MaterialComponents.Caption"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Time"/>
+          android:text="@string/hint_time"/>
 
       <com.google.android.material.button.MaterialButton
           style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -91,7 +91,7 @@
           android:layout_height="48dp"
           android:paddingBottom="0dp"
           android:gravity="start|bottom"
-          android:text="00:00"/>
+          android:text="@string/ph_time"/>
 
     </LinearLayout>
 
@@ -107,7 +107,7 @@
           style="@style/TextAppearance.MaterialComponents.Caption"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="Duration (min)"/>
+          android:text="@string/hint_duration"/>
 
       <com.google.android.material.textfield.TextInputLayout
           style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
@@ -124,7 +124,7 @@
             android:layout_margin="0dp"
             android:inputType="number"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-            android:hint="Duration"
+            android:hint="@string/ph_duration"
             android:textColorHint="@color/colorPrimary"
             android:textColor="@color/colorPrimary"/>
 

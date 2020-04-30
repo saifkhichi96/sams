@@ -42,7 +42,7 @@ class AttendanceActivity : DashboardChildActivity() {
         AttendanceDao.getByStudent(schoolId, currentStudent, OnSuccessListener { savedRecords ->
             attendanceRecords.clear()
             savedRecords?.let {
-                supportActionBar?.title = String.format("%.1f%% Attendance", calculateAttendancePercentage(it))
+                supportActionBar?.title = String.format(getString(R.string.title_attendance_percentage), calculateAttendancePercentage(it))
                 attendanceRecords.addAll(it)
             }
             adapter.notifyDataSetChanged()

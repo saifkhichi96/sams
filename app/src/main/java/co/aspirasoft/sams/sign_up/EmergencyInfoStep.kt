@@ -57,11 +57,11 @@ class EmergencyInfoStep : WizardViewStep("Emergency Info") {
             val email = emergencyContactEmailField.text.toString().trim()
 
             if (email.isNotBlank() && !email.isEmail()) {
-                emergencyContactEmailField.showError(getString(R.string.error_email_invalid))
+                emergencyContactEmailField.showError(getString(R.string.error_invalid_email))
                 false
             } else if (bloodType.isNotBlank() && !bloodTypes.contains(bloodType)) {
                 bloodTypeWrapper.isErrorEnabled = true
-                bloodTypeWrapper.error = getString(R.string.error_blood_type_invalid)
+                bloodTypeWrapper.error = getString(R.string.error_invalid_blood_type)
                 false
             } else {
                 data.apply {

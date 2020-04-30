@@ -11,7 +11,7 @@
     android:paddingTop="0dp"
     android:paddingStart="8dp"
     android:paddingEnd="8dp"
-    android:text="Filename"
+    android:text="@string/ph_name"
     android:textAllCaps="false"
     android:textColor="?android:attr/textColorPrimary"
     app:icon="@drawable/ic_cloud"

@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.Menu
 import android.view.View
-import android.widget.Toast
 import androidmads.library.qrgenearator.QRGContents
 import androidmads.library.qrgenearator.QRGEncoder
 import androidx.core.view.iterator
@@ -103,7 +102,7 @@ class SchoolDashboardActivity : DashboardActivity() {
             inviteSingleEmail(email, OnCompleteListener {
                 progressDialog.dismiss()
                 if (!it.isSuccessful) {
-                    emailField.showError(it.exception?.message ?: getString(R.string.error_invitation_failure))
+                    emailField.showError(it.exception?.message ?: getString(R.string.status_invitation_failed))
                 }
             })
         }
@@ -136,11 +135,11 @@ class SchoolDashboardActivity : DashboardActivity() {
     fun onInvitedStaffClicked(v: View) {
         if (invitedStaff.size > 0) {
             startSecurely(SchoolTeachersActivity::class.java, Intent().apply {
-                putExtra(MyApplication.EXTRA_INVITE_STATUS, getString(R.string.status_invite_pending))
+                putExtra(MyApplication.EXTRA_INVITE_STATUS, getString(R.string.pending))
                 putExtra(MyApplication.EXTRA_INVITES, invitedStaff)
             })
         } else {
-            Snackbar.make(joinedStaffButton, "No staff members invited yet.", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(joinedStaffButton, getString(R.string.error_no_staff_invited), Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -153,11 +152,11 @@ class SchoolDashboardActivity : DashboardActivity() {
     fun onJoinedStaffClicked(v: View) {
         if (joinedStaff.size > 0) {
             startSecurely(SchoolTeachersActivity::class.java, Intent().apply {
-                putExtra(MyApplication.EXTRA_INVITE_STATUS, getString(R.string.status_invite_accepted))
+                putExtra(MyApplication.EXTRA_INVITE_STATUS, getString(R.string.accepted))
                 putExtra(MyApplication.EXTRA_INVITES, joinedStaff)
             })
         } else {
-            Snackbar.make(joinedStaffButton, "No staff members have joined yet.", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(joinedStaffButton, getString(R.string.error_no_staff_joined), Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -170,7 +169,11 @@ class SchoolDashboardActivity : DashboardActivity() {
         InvitationTask(this, currentUser.id, email, schoolId)
                 .start { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(this@SchoolDashboardActivity, getString(R.string.status_invitation_sent), Toast.LENGTH_LONG).show()
+                        Snackbar.make(
+                                schoolActivity,
+                                getString(R.string.status_invitation_sent),
+                                Snackbar.LENGTH_LONG
+                        ).show()
                         emailField.setText("")
                     } else {
                         emailField.showError("Email ${task.exception?.message ?: "could not be sent"}.")

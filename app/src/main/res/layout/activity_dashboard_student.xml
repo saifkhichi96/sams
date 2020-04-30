@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="co.aspirasoft.sams.StudentDashboardActivity">
+    tools:context=".StudentDashboardActivity">
 
   <!-- Fixed top action bar -->
   <com.google.android.material.appbar.AppBarLayout
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="@string/ph_assigned_class"/>
+                android:text="@string/ph_class"/>
 
           </LinearLayout>
 
@@ -146,7 +146,7 @@
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/activity_vertical_margin"
           android:textStyle="bold"
-          android:text="@string/courses_head"/>
+          android:text="@string/section_courses"/>
 
       <co.aspirasoft.view.NestedGridView
           android:id="@+id/coursesList"
@@ -160,7 +160,7 @@
           android:layout_height="wrap_content"
           android:layout_marginTop="@dimen/activity_vertical_margin"
           android:textStyle="bold"
-          android:text="@string/timetable_head"/>
+          android:text="@string/section_timetable"/>
 
       <com.google.android.material.tabs.TabLayout
           style="@style/Widget.MaterialComponents.TabLayout"

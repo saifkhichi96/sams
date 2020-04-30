@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/schoolActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryDark"
     android:theme="@style/AppTheme.Dark"
-    tools:context="co.aspirasoft.sams.SchoolDashboardActivity">
+    tools:context=".SchoolDashboardActivity">
 
   <com.google.android.material.appbar.AppBarLayout
       android:layout_width="match_parent"
@@ -91,7 +92,7 @@
               android:layout_marginTop="8dp"
               android:gravity="center"
               android:textStyle="bold"
-              android:text="@string/staff_head"/>
+              android:text="@string/staff"/>
 
           <LinearLayout
               android:layout_width="wrap_content"
@@ -135,7 +136,7 @@
               android:layout_width="320dp"
               android:layout_height="wrap_content"
               android:gravity="center"
-              android:text="@string/staff_desc"/>
+              android:text="@string/staff_body"/>
 
           <LinearLayout
               android:layout_width="wrap_content"
@@ -204,7 +205,7 @@
               android:layout_marginTop="8dp"
               android:gravity="center"
               android:textStyle="bold"
-              android:text="@string/academics_head"/>
+              android:text="@string/academics"/>
 
           <com.google.android.material.textview.MaterialTextView
               style="@style/TextAppearance.MaterialComponents.Body2"
@@ -212,7 +213,7 @@
               android:layout_height="wrap_content"
               android:layout_margin="8dp"
               android:gravity="center"
-              android:text="@string/academics_desc"/>
+              android:text="@string/academics_body"/>
 
           <LinearLayout
               android:layout_width="wrap_content"
