@@ -1,9 +1,12 @@
 package co.aspirasoft.sams.utils
 
+import android.app.Activity
 import android.graphics.Color
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import co.aspirasoft.sams.R
 import com.google.android.material.snackbar.Snackbar
+
 
 object Utils {
 
@@ -12,6 +15,15 @@ object Utils {
                 .setBackgroundTint(v.context.getColor(R.color.colorWarning))
                 .setTextColor(Color.WHITE)
                 .show()
+    }
+
+    fun Activity.hideKeyboard() {
+        val imm: InputMethodManager = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        var view = this.currentFocus
+        if (view == null) {
+            view = View(this)
+        }
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
 }

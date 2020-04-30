@@ -92,7 +92,7 @@
   <string name="label_mark_attendance">Mark Attendance</string>
   <string name="label_news">News</string>
   <string name="label_privacy">Privacy Policy</string>
-  <string name="label_profile">Manage your Cygnus Profile</string>
+  <string name="label_profile">Manage your SAMS Profile</string>
   <string name="label_revoke">Revoke</string>
   <string name="label_save">Save</string>
   <string name="label_see_attendance">See Attendance</string>
@@ -144,7 +144,7 @@
   <string name="add_subject_body">Enter details of the new subject to add it to your school. Please note that each
     subject taught to a class must have a unique name.
   </string>
-  <string name="staff_body">Invite your team members to join Cygnus. A magic link will be emailed which
+  <string name="staff_body">Invite your team members to join SAMS. A magic link will be emailed which
     can be used to sign up.
   </string>
   <string name="student_class_head">You are enrolled in</string>
@@ -159,7 +159,7 @@
 
 
   <!-- Messages -->
-  <string name="sign_up_welcome_msg">%s %s,\n\nYou have been invited by your %s to join the Cygnus App.
+  <string name="sign_up_welcome_msg">%s %s,\n\nYou have been invited by your %s to join the SAMS School App.
     \n\nPlease complete the registration process by creating a password for your new account.
   </string>
 

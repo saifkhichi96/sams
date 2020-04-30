@@ -8,7 +8,7 @@ import java.net.URLEncoder
 
 object DynamicLinksUtils {
 
-    private const val domain = "https://cygnus.page.link"
+    private const val domain = "https://aspirasoft.page.link"
     private const val androidPackageName = "co.aspirasoft.sams"
     private const val iOSBundleId = "co.aspirasoft.sams"
 

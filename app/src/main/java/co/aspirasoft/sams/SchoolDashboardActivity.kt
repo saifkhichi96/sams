@@ -17,6 +17,7 @@ import co.aspirasoft.sams.dao.InvitesDao
 import co.aspirasoft.sams.model.School
 import co.aspirasoft.sams.model.User
 import co.aspirasoft.sams.tasks.InvitationTask
+import co.aspirasoft.sams.utils.Utils.hideKeyboard
 import co.aspirasoft.sams.view.EmailsInputDialog
 import co.aspirasoft.util.InputUtils.isNotBlank
 import co.aspirasoft.util.InputUtils.showError
@@ -91,6 +92,7 @@ class SchoolDashboardActivity : DashboardActivity() {
      */
     fun onInviteSingleClicked(v: View) {
         if (emailField.isNotBlank()) {
+            hideKeyboard()
             val email = emailField.text.toString().trim()
             val progressDialog = ProgressDialog.show(
                     this,
@@ -119,6 +121,7 @@ class SchoolDashboardActivity : DashboardActivity() {
      * sent. Status of each sent invite is displayed.
      */
     fun onInviteMultipleClicked(v: View) {
+        hideKeyboard()
         EmailsInputDialog(this)
                 .setOnEmailsReceivedListener { emails ->
                     inviteMultipleEmails(emails)
@@ -133,6 +136,7 @@ class SchoolDashboardActivity : DashboardActivity() {
      * invitations.
      */
     fun onInvitedStaffClicked(v: View) {
+        hideKeyboard()
         if (invitedStaff.size > 0) {
             startSecurely(SchoolTeachersActivity::class.java, Intent().apply {
                 putExtra(MyApplication.EXTRA_INVITE_STATUS, getString(R.string.pending))
@@ -150,6 +154,7 @@ class SchoolDashboardActivity : DashboardActivity() {
      * their invitations and joined the app.
      */
     fun onJoinedStaffClicked(v: View) {
+        hideKeyboard()
         if (joinedStaff.size > 0) {
             startSecurely(SchoolTeachersActivity::class.java, Intent().apply {
                 putExtra(MyApplication.EXTRA_INVITE_STATUS, getString(R.string.accepted))
@@ -168,7 +173,7 @@ class SchoolDashboardActivity : DashboardActivity() {
     private fun inviteSingleEmail(email: String, listener: OnCompleteListener<Void?>? = null) {
         InvitationTask(this, currentUser.id, email, schoolId)
                 .start { task ->
-                    if (task.isSuccessful) {
+                    if (task.isSuccessful || task.exception == null) {
                         Snackbar.make(
                                 schoolActivity,
                                 getString(R.string.status_invitation_sent),
@@ -176,7 +181,7 @@ class SchoolDashboardActivity : DashboardActivity() {
                         ).show()
                         emailField.setText("")
                     } else {
-                        emailField.showError("Email ${task.exception?.message ?: "could not be sent"}.")
+                        emailField.showError(task.exception?.message ?: getString(R.string.status_invitation_failed))
                     }
 
                     listener?.let { task.addOnCompleteListener(it) }

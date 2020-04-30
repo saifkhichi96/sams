@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
  * SplashActivity is first called when the app starts.
  *
  * Purpose of this activity is to display the splash screen of
- * the Cygnus app and to prepare the app for launch.
+ * the SAMS app and to prepare the app for launch.
  *
  * @author saifkhichi96
  * @since 1.0.0

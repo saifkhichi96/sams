@@ -16,7 +16,7 @@ import co.aspirasoft.view.WizardViewStep
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-class CreateAccountStep : WizardViewStep("Welcome to Cygnus") {
+class CreateAccountStep : WizardViewStep("Welcome to SAMS") {
 
     private lateinit var signUpWelcomeMessage: TextView
     private lateinit var passwordField: TextInputEditText
