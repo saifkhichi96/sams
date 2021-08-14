@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitySchedule">
+
+    <!-- App bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:title="Day Schedule" />
+
+    <!-- Page content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/actionBar"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+        <!-- Action tabs -->
+        <LinearLayout
+            android:id="@+id/actionTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/classesAll"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="All" />
+
+            <Button
+                android:id="@+id/classesToday"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Today"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <Button
+                android:id="@+id/classesOnDay"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Day View"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <!-- Tab: All -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionTabs"
+            android:scrollbars="none">
+
+            <!-- All Classes -->
+            <LinearLayout
+                android:id="@+id/allClasses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Tab: Today -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionTabs"
+            android:scrollbars="none">
+
+            <!-- Classes today -->
+            <LinearLayout
+                android:id="@+id/todayClasses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Tab: Day View -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionTabs"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/dayClasses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <!-- Insert new class button -->
+    <ImageView
+        android:id="@+id/addLecture"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        android:background="@drawable/button_create"
+        android:scaleType="centerInside" />
+
+</RelativeLayout>

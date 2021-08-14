@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.aspirasoft.sams">
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:logo="@drawable/logo"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ActivitySplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ActivitySignIn" />
+
+        <activity android:name=".ActivitySignUp" />
+
+        <activity android:name=".FragmentStudentType" />
+
+        <activity android:name=".FragmentUserDetails" />
+
+        <activity android:name=".FragmentUserType" />
+
+        <activity android:name=".FragmentEducation" />
+
+        <activity android:name=".ActivitySchedule" />
+
+        <activity android:name=".ActivityDashboard" />
+
+    </application>
+
+</manifest>

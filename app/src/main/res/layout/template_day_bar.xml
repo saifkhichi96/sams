@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="0dp"
+    android:orientation="horizontal"
+    android:weightSum="7">
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Mon"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Tue"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Wed"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Thur"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Fri"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Sat"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:text="Sun"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark" />
+
+</LinearLayout>
