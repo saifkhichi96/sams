@@ -1,15 +1,14 @@
 package co.aspirasoft.sams;
 
 import android.os.Bundle;
-import android.support.design.button.MaterialButton;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.button.MaterialButton;
 import params.com.stepview.StatusViewScroller;
 
 /**

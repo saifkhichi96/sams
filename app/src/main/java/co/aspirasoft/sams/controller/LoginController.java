@@ -6,13 +6,13 @@ import co.aspirasoft.sams.model.users.accounts.AccountsDatabase;
 public class LoginController {
 
     private final String VIEW_INCOMPLETE = "Some fields are incomplete.";
-    private final String VIEW_MISMATCH   = "Invalid username/password combination.";
-    private final String VIEW_CONNECT_ERR= "Check your internet connection.";
-    private final String VIEW_SUCCESS    = "Login successful.";
+    private final String VIEW_MISMATCH = "Invalid username/password combination.";
+    private final String VIEW_CONNECT_ERR = "Check your internet connection.";
+    private final String VIEW_SUCCESS = "Login successful.";
 
-    private Account account;
+    private final Account account;
 
-    public LoginController(String username, String password){
+    public LoginController(String username, String password) {
         account = new Account(username, password);
     }
 
@@ -55,9 +55,7 @@ public class LoginController {
             }
 
             // Return true if string not empty
-            if (!string.equals("")) {
-                return true;
-            }
+            return !string.equals("");
         }
 
         // Return false if string null or empty

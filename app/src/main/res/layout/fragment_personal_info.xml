@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="256dp"
@@ -16,7 +16,7 @@
             android:layout_height="200dp"
             android:background="@drawable/avatar_frame"
             android:scaleType="centerInside"
-            android:src="@drawable/avatar_placeholder" />
+            android:src="@drawable/avatar_placeholder"/>
 
         <ImageView
             android:id="@+id/avatarChange"
@@ -25,11 +25,11 @@
             android:layout_alignEnd="@+id/avatar"
             android:layout_alignRight="@+id/avatar"
             android:layout_alignBottom="@+id/avatar"
-            android:src="@drawable/avatar_change" />
+            android:src="@drawable/avatar_change"/>
 
     </RelativeLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/name_wrapper"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
         android:layout_margin="16dp"
         android:hint="Enter your name">
 
-        <android.support.design.widget.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name_field"
             style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox"
             android:layout_width="match_parent"
@@ -45,8 +45,8 @@
             android:drawableEnd="@drawable/ic_action_edit"
             android:drawableRight="@drawable/ic_action_edit"
             android:inputType="textPersonName"
-            android:maxLines="1" />
+            android:maxLines="1"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

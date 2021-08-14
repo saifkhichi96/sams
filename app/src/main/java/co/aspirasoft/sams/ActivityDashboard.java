@@ -1,15 +1,15 @@
 package co.aspirasoft.sams;
 
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class ActivityDashboard extends AppCompatActivity {
 
@@ -34,9 +34,9 @@ public class ActivityDashboard extends AppCompatActivity {
         setTitle("ActivityDashboard");
 
         //mMenuItems = getResources().getStringArray(R.array.menu_items);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mDrawerMain = (LinearLayout) findViewById(R.id.left_drawer);
-        mDrawerList = (ListView) findViewById(R.id.listView);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        mDrawerMain = findViewById(R.id.left_drawer);
+        mDrawerList = findViewById(R.id.listView);
 
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                                   /* host Activity */
@@ -46,7 +46,9 @@ public class ActivityDashboard extends AppCompatActivity {
                 R.string.drawer_close                   /* "close drawer" description */
         ) {
 
-            /** Called when a drawer has settled in a completely closed state. */
+            /**
+             * Called when a drawer has settled in a completely closed state.
+             */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 setTitle(mTitle);
@@ -72,14 +74,14 @@ public class ActivityDashboard extends AppCompatActivity {
         //        R.layout.drawer_items,
         //        mMenuItems
         //) {
-            //@Override
-            //public View getView(int position, View convertView, ViewGroup parent) {
-                //View v = super.getView(position, convertView, parent);
-                //int resourceId = typedArray.getResourceId(position, 0);
-                //Drawable drawable = getResources().getDrawable(resourceId);
-                //((TextView) v).setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-                //return v;
-            //}
+        //@Override
+        //public View getView(int position, View convertView, ViewGroup parent) {
+        //View v = super.getView(position, convertView, parent);
+        //int resourceId = typedArray.getResourceId(position, 0);
+        //Drawable drawable = getResources().getDrawable(resourceId);
+        //((TextView) v).setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+        //return v;
+        //}
         //});
 
         // Set the list's click listener

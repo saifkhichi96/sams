@@ -3,18 +3,14 @@ package co.aspirasoft.sams;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,9 +30,9 @@ public class ActivitySchedule extends AppCompatActivity implements View.OnClickL
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Class Schedule");
 
-        classesAll = (Button) findViewById(R.id.classesAll);
-        classesToday = (Button) findViewById(R.id.classesToday);
-        classesOnDay = (Button) findViewById(R.id.classesOnDay);
+        classesAll = findViewById(R.id.classesAll);
+        classesToday = findViewById(R.id.classesToday);
+        classesOnDay = findViewById(R.id.classesOnDay);
 
         classesAll.setOnClickListener(this);
         classesToday.setOnClickListener(this);

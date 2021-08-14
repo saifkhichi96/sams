@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActivitySchedule">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ActivitySchedule">
 
     <!-- App bar -->
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/actionBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         android:elevation="4dp"
-        app:title="Day Schedule" />
+        app:title="Day Schedule"/>
 
     <!-- Page content -->
     <RelativeLayout
@@ -39,7 +39,7 @@
                 android:layout_weight="1"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
-                android:text="All" />
+                android:text="All"/>
 
             <Button
                 android:id="@+id/classesToday"
@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Today"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark"/>
 
             <Button
                 android:id="@+id/classesOnDay"
@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Day View"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark"/>
 
         </LinearLayout>
 
@@ -125,6 +125,6 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="25dp"
         android:background="@drawable/button_create"
-        android:scaleType="centerInside" />
+        android:scaleType="centerInside"/>
 
 </RelativeLayout>

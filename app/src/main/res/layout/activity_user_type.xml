@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".FragmentUserType">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                tools:context=".FragmentUserType">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="Select User Type"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="5"
-                    android:src="@drawable/user_student" />
+                    android:src="@drawable/user_student"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Student"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"/>
 
             </LinearLayout>
 
@@ -72,7 +72,7 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="5"
-                    android:src="@drawable/user_teacher" />
+                    android:src="@drawable/user_teacher"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Teacher"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"/>
 
             </LinearLayout>
 
@@ -107,7 +107,7 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="5"
-                    android:src="@drawable/user_admin" />
+                    android:src="@drawable/user_admin"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Admin"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"/>
 
 
             </LinearLayout>
@@ -134,7 +134,7 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="5"
-                    android:src="@drawable/user_warden" />
+                    android:src="@drawable/user_warden"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -143,7 +143,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="Warden"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"/>
 
             </LinearLayout>
 

@@ -2,7 +2,6 @@ package co.aspirasoft.sams;
 
 import android.util.SparseArray;
 import android.widget.Toast;
-
 import co.aspirasoft.sams.model.users.Student;
 import co.aspirasoft.sams.model.users.accounts.Account;
 

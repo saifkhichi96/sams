@@ -21,7 +21,7 @@ public class Database extends SQLiteOpenHelper {
                 "   ID int PRIMARY KEY," +
                 "   forename varchar(30) NOT NULL," +
                 "   surname varchar(30) NOT NULL," +
-                "   title enum('Mr.', 'Mrs.', 'Ms.', 'Sir', 'Ma\'am') NOT NULL," +
+                "   title enum('Mr.', 'Mrs.', 'Ms.', 'Sir', 'Ma'am') NOT NULL," +
                 "   email varchar(35) UNIQUE," +
                 "   phone varchar(11)," +
                 "   office varchar(75)" +
@@ -74,7 +74,7 @@ public class Database extends SQLiteOpenHelper {
 
         String query = "" +
                 "INSERT INTO Instructor VALUES ('" +
-                Integer.toString(id) + "'" +
+                id + "'" +
                 fname + sname + title +
                 email + phone + office +
                 ");";
@@ -88,7 +88,7 @@ public class Database extends SQLiteOpenHelper {
         String query = "" +
                 "INSERT INTO Course VALUES (" +
                 code + name + creditHours +
-                "'" + Integer.toString(instructorID) +
+                "'" + instructorID +
                 "');";
         this.getWritableDatabase().execSQL(query);
     }
@@ -123,7 +123,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public ArrayList<String> getInstructorDetails(int id) {
-        String query = "SELECT * FROM Instructor WHERE ID = '" + Integer.toString(id) + "';";
+        String query = "SELECT * FROM Instructor WHERE ID = '" + id + "';";
         Cursor cursor = this.getWritableDatabase().rawQuery(query, null);
         if (cursor.moveToFirst()) {
             ArrayList<String> details = new ArrayList<>();

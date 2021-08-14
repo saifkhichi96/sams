@@ -3,11 +3,10 @@ package co.aspirasoft.sams;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
 import co.aspirasoft.sams.controller.LoginController;
 
 public class ActivitySignIn extends AppCompatActivity implements View.OnClickListener {
@@ -20,8 +19,8 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = (EditText) findViewById(R.id.login_username);
-        password = (EditText) findViewById(R.id.login_password);
+        username = findViewById(R.id.login_username);
+        password = findViewById(R.id.login_password);
 
         findViewById(R.id.login).setOnClickListener(this);
         findViewById(R.id.createAccount).setOnClickListener(this);
@@ -35,7 +34,7 @@ public class ActivitySignIn extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.login:
                 String user = username.getText().toString();
-                String pwd  = password.getText().toString();
+                String pwd = password.getText().toString();
 
                 LoginController controller = new LoginController(user, pwd);
                 String response = controller.execute();

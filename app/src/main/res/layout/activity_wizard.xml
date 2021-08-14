@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="?attr/colorPrimaryDark"
-    tools:context=".WizardActivity">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:background="?attr/colorPrimaryDark"
+                                                     tools:context=".WizardActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,28 +21,28 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/logo"
-                android:tint="?attr/colorAccent" />
+                android:tint="?attr/colorAccent"/>
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/title_view"
                 style="@style/TextAppearance.MaterialComponents.Headline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title"
-                android:textColor="?attr/colorAccent" />
+                android:textColor="?attr/colorAccent"/>
 
         </LinearLayout>
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/contentView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp" />
+            android:layout_margin="16dp"/>
 
     </LinearLayout>
 
@@ -56,7 +56,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="?attr/colorAccent" />
+            android:background="?attr/colorAccent"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
 
-            <android.support.design.button.MaterialButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_next"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:text="@string/next"
-                app:strokeColor="?attr/colorAccent" />
+                app:strokeColor="?attr/colorAccent"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                     app:lineColorIncomplete="?attr/colorPrimary"
                     app:lineGap="0dp"
                     app:lineLength="16dp"
-                    app:lineWidth="3dp" />
+                    app:lineWidth="3dp"/>
 
             </LinearLayout>
 
@@ -110,4 +110,4 @@
 
     </LinearLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
