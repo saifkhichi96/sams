@@ -10,8 +10,8 @@ import android.widget.Button
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.dao.SubjectsDao
 import co.aspirasoft.sams.model.Subject
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isNotBlank
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.checkbox.MaterialCheckBox
@@ -48,12 +48,12 @@ class AddSubjectDialog : BottomSheetDialogFragment() {
             schoolId = args.getString(ARG_SCHOOL_ID)!!
             model = args.getSerializable(ARG_SAVED_INSTANCE) as Subject?
         } catch (ex: Exception) {
-            ex.message?.let { Utils.showError(v, it)  }
+            ex.message?.let { showError(v, it)  }
             dismiss()
             return null
         } finally {
             if (classes.isEmpty()) {
-                Utils.showError(v, getString(R.string.error_missing_classes))
+                showError(v, getString(R.string.error_missing_classes))
                 dismiss()
                 return null
             }

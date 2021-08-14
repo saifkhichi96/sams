@@ -12,7 +12,7 @@ import co.aspirasoft.sams.dao.Invite
 import co.aspirasoft.sams.dao.InvitesDao
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.*
-import co.aspirasoft.sams.utils.Utils
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -248,7 +248,7 @@ class SignUpActivity : AppCompatActivity() {
      * @param error An (optional) description of cause of failure.
      */
     private fun onFailure(error: String? = null) {
-        Utils.showError(wizardView, error ?: getString(R.string.error_missing_invitation))
+        showError(wizardView, error ?: getString(R.string.error_missing_invitation))
         findViewById<Button>(R.id.nextButton).text = getString(R.string.label_sign_up)
         findViewById<Button>(R.id.nextButton).isEnabled = true
     }

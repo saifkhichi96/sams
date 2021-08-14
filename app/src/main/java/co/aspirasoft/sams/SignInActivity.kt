@@ -10,8 +10,8 @@ import co.aspirasoft.sams.model.Credentials
 import co.aspirasoft.sams.model.School
 import co.aspirasoft.sams.model.Teacher
 import co.aspirasoft.sams.model.User
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isNotBlank
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -159,7 +159,7 @@ class SignInActivity : AppCompatActivity() {
      * could not be fetched from the database.
      */
     private fun onFailure(ex: Exception?) {
-        Utils.showError(signInButton, ex?.message ?: getString(R.string.status_sign_in_failed))
+        showError(signInButton, ex?.message ?: getString(R.string.status_sign_in_failed))
         auth.signOut()
     }
 

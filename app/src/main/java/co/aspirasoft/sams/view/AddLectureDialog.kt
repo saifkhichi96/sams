@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.model.Subject
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.showError
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
@@ -38,7 +38,7 @@ class AddLectureDialog : BottomSheetDialogFragment() {
             schoolId = args.getString(ARG_SCHOOL_ID)!!
             subject = args.getSerializable(ARG_SUBJECT) as Subject
         } catch (ex: Exception) {
-            ex.message?.let { Utils.showError(v, it) }
+            ex.message?.let { showError(v, it) }
             dismiss()
             return null
         }

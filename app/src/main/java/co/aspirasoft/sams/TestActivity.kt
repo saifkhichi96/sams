@@ -12,8 +12,8 @@ import co.aspirasoft.sams.core.DashboardChildActivity
 import co.aspirasoft.sams.dao.TestsDao
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.*
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.sams.view.TestScoreView
+import co.aspirasoft.util.ViewUtils
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -220,7 +220,7 @@ class TestActivity : DashboardChildActivity() {
     }
 
     private fun showError(error: String) {
-        Utils.showError(contentList, error)
+        ViewUtils.showError(contentList, error)
     }
 
     private fun updateTestWith(saved: Test) {

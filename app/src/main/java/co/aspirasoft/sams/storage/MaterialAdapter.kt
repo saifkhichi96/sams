@@ -7,8 +7,8 @@ import co.aspirasoft.adapter.ModelViewAdapter
 import co.aspirasoft.sams.R
 import co.aspirasoft.sams.model.CourseFile
 import co.aspirasoft.sams.storage.FileUtils.openInExternalApp
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.sams.view.CourseFileView
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import java.io.IOException
@@ -39,12 +39,12 @@ class MaterialAdapter(val context: Activity, val material: ArrayList<CourseFile>
                         try {
                             file.openInExternalApp(context)
                         } catch (ex: IOException) {
-                            Utils.showError(v, ex.message ?: context.getString(R.string.error_open))
+                            showError(v, ex.message ?: context.getString(R.string.error_open))
                         }
                     },
                     OnFailureListener {
                         v.setStatus(CourseFileView.FileStatus.Cloud)
-                        Utils.showError(v, it.message ?: context.getString(R.string.error_download))
+                        showError(v, it.message ?: context.getString(R.string.error_download))
                     }
             )
         }

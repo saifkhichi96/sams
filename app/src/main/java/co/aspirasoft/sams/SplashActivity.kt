@@ -7,7 +7,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import co.aspirasoft.sams.sign_up.SignUpActivity
 import co.aspirasoft.sams.utils.DynamicLinksUtils
-import co.aspirasoft.sams.utils.Utils
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
 import com.google.firebase.dynamiclinks.ktx.dynamicLinks
 import com.google.firebase.ktx.Firebase
@@ -63,7 +63,7 @@ class SplashActivity : AppCompatActivity() {
                         try {
                             parseDeepLink(it.result?.link!!)
                         } catch (ex: Exception) {
-                            Utils.showError(splashScreen, ex.message ?: getString(R.string.error_invalid_link))
+                            showError(splashScreen, ex.message ?: getString(R.string.error_invalid_link))
                         }
                     } else startAppDelayed()
                 }

@@ -12,9 +12,9 @@ import co.aspirasoft.sams.dao.ClassesDao
 import co.aspirasoft.sams.dao.Invite
 import co.aspirasoft.sams.model.Subject
 import co.aspirasoft.sams.model.User
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.sams.view.AddSubjectDialog
 import co.aspirasoft.sams.view.SubjectView
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.card.MaterialCardView
 import kotlinx.android.synthetic.main.activity_list.*
@@ -68,7 +68,7 @@ class SchoolSubjectsActivity : DashboardChildActivity() {
             }
             dialog.show(supportFragmentManager, dialog.toString())
         } else {
-            Utils.showError(contentList, getString(R.string.error_missing_classes))
+            showError(contentList, getString(R.string.error_missing_classes))
         }
     }
 

@@ -10,10 +10,10 @@ import co.aspirasoft.sams.R
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.Student
 import co.aspirasoft.sams.tasks.InvitationTask
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isEmail
 import co.aspirasoft.util.InputUtils.isNotBlank
 import co.aspirasoft.util.InputUtils.showError
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputEditText
@@ -44,7 +44,7 @@ class AddStudentDialog : BottomSheetDialogFragment() {
             teacherId = args.getString(ARG_TEACHER_ID)!!
             model = args.getSerializable(ARG_SAVED_INSTANCE) as Student?
         } catch (ex: Exception) {
-            ex.message?.let { Utils.showError(v, it) }
+            ex.message?.let { showError(v, it) }
             dismiss()
             return null
         }
@@ -85,7 +85,7 @@ class AddStudentDialog : BottomSheetDialogFragment() {
                 okButton.isEnabled = true
 
                 if (task.isSuccessful) {
-                    Utils.showError(studentEmailField, getString(R.string.status_invitation_sent))
+                    showError(studentEmailField, getString(R.string.status_invitation_sent))
                     dismiss()
                 } else {
                     studentEmailField.showError(task.exception?.message

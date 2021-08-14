@@ -13,8 +13,8 @@ import co.aspirasoft.sams.dao.ClassesDao
 import co.aspirasoft.sams.dao.UsersDao
 import co.aspirasoft.sams.model.SchoolClass
 import co.aspirasoft.sams.model.Teacher
-import co.aspirasoft.sams.utils.Utils
 import co.aspirasoft.util.InputUtils.isNotBlank
+import co.aspirasoft.util.ViewUtils.showError
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -53,7 +53,7 @@ class AddClassDialog : BottomSheetDialogFragment() {
             schoolId = args.getString(ARG_SCHOOL_ID)!!
             model = args.getSerializable(ARG_SAVED_CLASS) as SchoolClass?
         } catch (ex: Exception) {
-            ex.message?.let { Utils.showError(v, it) }
+            ex.message?.let { showError(v, it) }
             dismiss()
         }
 

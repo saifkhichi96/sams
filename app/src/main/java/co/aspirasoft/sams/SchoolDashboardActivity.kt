@@ -17,10 +17,10 @@ import co.aspirasoft.sams.dao.InvitesDao
 import co.aspirasoft.sams.model.School
 import co.aspirasoft.sams.model.User
 import co.aspirasoft.sams.tasks.InvitationTask
-import co.aspirasoft.sams.utils.Utils.hideKeyboard
 import co.aspirasoft.sams.view.EmailsInputDialog
 import co.aspirasoft.util.InputUtils.isNotBlank
 import co.aspirasoft.util.InputUtils.showError
+import co.aspirasoft.util.ViewUtils.hideKeyboard
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.material.snackbar.Snackbar
